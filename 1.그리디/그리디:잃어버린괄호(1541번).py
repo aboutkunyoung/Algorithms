@@ -1,4 +1,4 @@
-S=input().strip().split("-")
+S=input().split("-")
 
 sum_n=0
 for i in S[0].split("+"):
