@@ -1,0 +1,30 @@
+package Unsolved;
+
+import java.util.Scanner;
+
+public class test {
+
+	static int A, B, C;
+	static long ans = 1;
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		A = sc.nextInt();
+		B = sc.nextInt();
+		C = sc.nextInt();
+		recursive();
+	}
+
+	private static void recursive() {
+		if (B == 1) {
+			System.out.println(A % C);
+			return;
+		} else {
+
+		}
+
+		ans *= A;
+//		recursive(k + 1);
+
+	}
+}
