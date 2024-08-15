@@ -41,13 +41,6 @@ public class BOJ_15649 {
 			}
 		}
 
-		
-//		if (v[0] == false) {
-//			v[0] = true;
-//			sel[k] = arr[0];
-//			recursive(arr, sel, k + 1, v);
-//			v[0] = false;
-//		}
 	}
 
 }
