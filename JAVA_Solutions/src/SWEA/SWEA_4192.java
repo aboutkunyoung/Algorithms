@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+import Unsolved.PointXY;
+
 class PointXY {
 	int row;
 	int col;

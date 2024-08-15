@@ -1,4 +1,4 @@
-package SWEA;
+package Unsolved;
 
 import java.util.LinkedList;
 import java.util.Queue;
