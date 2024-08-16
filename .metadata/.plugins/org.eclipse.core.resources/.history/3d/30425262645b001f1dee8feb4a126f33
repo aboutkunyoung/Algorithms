@@ -1,0 +1,28 @@
+package Unsolved;
+
+import java.util.Scanner;
+
+public class BOJ_1629 {
+
+	static long A, B, C;
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		A = sc.nextInt();
+		B = sc.nextInt();
+		C = sc.nextInt();
+		recursive(A, B);
+	}
+
+	private static long recursive(long A, long B) {
+		if (B == 1) {
+			return A;
+		}
+		long temp = recursive(A, B / 2);
+
+		if (B % 2 == 1)
+			return temp * temp * A;
+
+		return temp * temp;
+	}
+}

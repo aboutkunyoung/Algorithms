@@ -1,0 +1,85 @@
+package Unsolved;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+public class BOJ_2961 {
+
+	static BufferedReader br = null;
+	static BufferedWriter bw = null;
+	static StringTokenizer st = null;
+	static StringBuilder sb = null;
+
+	static int[] s;
+	static int[] t;
+
+	static int ans = Integer.MAX_VALUE;
+
+	public static void main(String[] args) throws IOException {
+		br = new BufferedReader(new InputStreamReader(System.in));
+		bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		sb = new StringBuilder();
+		st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+
+		s = new int[N];
+		t = new int[N];
+
+		for (int i = 0; i < N; i++) {
+			st = new StringTokenizer(br.readLine());
+			s[i] = Integer.parseInt(st.nextToken());
+			t[i] = Integer.parseInt(st.nextToken());
+		}
+
+		boolean[] sel = new boolean[s.length];
+
+		recursive(0, sel);
+
+		sb.append(ans);
+		bw.write(sb.toString());
+		bw.flush();
+		bw.close();
+		br.close();
+	}
+
+	private static void recursive(int idx, boolean[] sel) {
+		if (idx == s.length) {
+			int flag = 0;
+			for (int i = 0; i < sel.length; i++) {
+				if (sel[i] == false)
+					flag += 1;
+			}
+			if (flag == sel.length)
+				return;
+			
+			int s_ans = 1;
+			int t_ans = 0;
+			System.out.println("--------------------");
+
+			for (int i = 0; i < sel.length; i++) {
+				if (sel[i] == true) {
+					t_ans += t[i];
+					s_ans *= s[i];
+					System.out.println(t_ans + " " + s_ans);
+				}
+			}
+//			System.out.println(t_ans + " " + s_ans);
+
+			if (ans > Math.abs(t_ans - s_ans)) {
+				ans = Math.abs(t_ans - s_ans);
+			}
+			return;
+		}
+
+		sel[idx] = true;
+		recursive(idx + 1, sel);
+
+		sel[idx] = false;
+		recursive(idx + 1, sel);
+	}
+
+}

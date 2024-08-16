@@ -1,0 +1,19 @@
+package Unsolved;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.util.StringTokenizer;
+
+public class BOJ_2961 {
+
+	static BufferedReader br = null;
+	static BufferedWriter bw = null;
+	static StringTokenizer st = null;
+	static StringBuilder sb = null;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

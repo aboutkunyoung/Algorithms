@@ -1,0 +1,46 @@
+package Recrusive;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+public class BOJ_1629 {
+
+	static long A, B, C;
+
+	static BufferedReader br = null;
+	static BufferedWriter bw = null;
+	static StringTokenizer st = null;
+	static StringBuilder sb = null;
+
+	public static void main(String[] args) throws IOException {
+		br = new BufferedReader(new InputStreamReader(System.in));
+		bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		sb = new StringBuilder();
+		st = new StringTokenizer(br.readLine());
+
+		A = Integer.parseInt(st.nextToken());
+		B = Integer.parseInt(st.nextToken());
+		C = Integer.parseInt(st.nextToken());
+
+		System.out.println(recursive(A, B));
+		
+		bw.write(sb.toString());
+		
+	}
+
+	private static long recursive(long A, long B) {
+		if (B == 1) {
+			return A;
+		}
+		long temp = recursive(A, B / 2);
+
+		if (B % 2 == 1)
+			return (temp * temp % C) * A % C;
+
+		return temp * temp % C;
+	}
+}
