@@ -30,7 +30,7 @@ public class BOJ_2606 {
 			node[to].add(from);
 		}
 
-		BFS(1);
+		DFS(1);
 
 		int cnt = 0;
 		for (int i = 1; i <= N; i++) {
@@ -54,6 +54,18 @@ public class BOJ_2606 {
 				}
 			}
 		}
+	}
+
+	private static void DFS(int N) {
+		if (v[N] == true) {
+			return;
+		}
+		v[N] = true;
+
+		for (int next : node[N]) {
+			DFS(next);
+		}
+
 	}
 
 }
