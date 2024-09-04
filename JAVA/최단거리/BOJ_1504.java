@@ -1,3 +1,4 @@
+package 최단거리;
 
 import java.util.*;
 
